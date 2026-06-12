@@ -13,7 +13,7 @@ export default function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [cartTab, setCartTab] = useState<'bag' | 'wishlist'>('bag');
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState<'Woman' | 'Man'>('Woman');
+  const [activeTab, setActiveTab] = useState<'Girls' | 'Boys'>('Girls');
   const [isScrolled, setIsScrolled] = useState(false);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -168,24 +168,24 @@ export default function Navbar() {
               
               <div style={{ display: 'flex', gap: '1.5rem', marginLeft: '1rem' }}>
                 <button 
-                  onClick={() => setActiveTab('Woman')}
+                  onClick={() => setActiveTab('Girls')}
                   style={{ 
                     background: 'none', border: 'none', cursor: 'pointer', 
-                    fontSize: '1rem', fontWeight: activeTab === 'Woman' ? 700 : 400,
-                    color: activeTab === 'Woman' ? '#000' : '#888'
+                    fontSize: '1rem', fontWeight: activeTab === 'Girls' ? 700 : 400,
+                    color: activeTab === 'Girls' ? '#000' : '#888'
                   }}
                 >
-                  Woman
+                  Girls
                 </button>
                 <button 
-                  onClick={() => setActiveTab('Man')}
+                  onClick={() => setActiveTab('Boys')}
                   style={{ 
                     background: 'none', border: 'none', cursor: 'pointer', 
-                    fontSize: '1rem', fontWeight: activeTab === 'Man' ? 700 : 400,
-                    color: activeTab === 'Man' ? '#000' : '#888'
+                    fontSize: '1rem', fontWeight: activeTab === 'Boys' ? 700 : 400,
+                    color: activeTab === 'Boys' ? '#000' : '#888'
                   }}
                 >
-                  Man
+                  Boys
                 </button>
               </div>
             </div>

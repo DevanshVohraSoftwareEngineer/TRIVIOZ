@@ -13,7 +13,7 @@ function emptyDraft(productsLength: number): Product {
     name: '',
     price: 149,
     description: '',
-    category: 'Women',
+    category: 'Girls',
     images: [
       'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop',
@@ -52,7 +52,7 @@ export default function InventoryPage() {
     [adminTaxonomy]
   );
 
-  const [newTaxonomy, setNewTaxonomy] = useState({ id: '', department: 'Woman', group: 'Collection', name: '' });
+  const [newTaxonomy, setNewTaxonomy] = useState({ id: '', department: 'Girls', group: 'Collection', name: '' });
 
 
   const lowStockProducts = products.filter((product) => product.stock < 15 && product.stock > 0);
@@ -467,8 +467,8 @@ export default function InventoryPage() {
           <div style={{ padding: '1.5rem', background: '#fafafa', borderBottom: '1px solid #eaeaea', display: 'flex', gap: '1rem', alignItems: 'flex-end' }}>
             <label style={{ flex: 1 }}>Department
               <select value={newTaxonomy.department} onChange={e => setNewTaxonomy({...newTaxonomy, department: e.target.value})} style={{ width: '100%', padding: '0.5rem', marginTop: '0.2rem' }}>
-                <option value="Woman">Woman</option>
-                <option value="Man">Man</option>
+                <option value="Girls">Girls</option>
+                <option value="Boys">Boys</option>
               </select>
             </label>
             <label style={{ flex: 1 }}>Group
@@ -497,14 +497,14 @@ export default function InventoryPage() {
                   } else {
                     setAdminTaxonomy([...adminTaxonomy, { ...newTaxonomy, id: 't' + Date.now() }]);
                   }
-                  setNewTaxonomy({ id: '', department: 'Woman', group: 'Collection', name: '' });
+                  setNewTaxonomy({ id: '', department: 'Girls', group: 'Collection', name: '' });
                 }
               }}>
                 {newTaxonomy.id ? 'Save Changes' : 'Add Navigation Link'}
               </button>
               {newTaxonomy.id && (
                 <button 
-                  onClick={() => setNewTaxonomy({ id: '', department: 'Woman', group: 'Collection', name: '' })} 
+                  onClick={() => setNewTaxonomy({ id: '', department: 'Girls', group: 'Collection', name: '' })} 
                   style={{ padding: '0.5rem 1rem', background: 'none', border: '1px solid #ccc', cursor: 'pointer', height: '100%' }}
                 >
                   Cancel
@@ -593,7 +593,7 @@ export default function InventoryPage() {
                   value={adminHero?.left?.link || ''} 
                   onChange={(e) => setAdminHero({ ...adminHero, left: { ...adminHero.left, link: e.target.value } })}
                   style={{ width: '100%', padding: '0.5rem', border: '1px solid #e2e8f0', borderRadius: '4px' }} 
-                  placeholder="e.g. Woman"
+                  placeholder="e.g. Girls"
                 />
               </div>
             </div>
@@ -626,7 +626,7 @@ export default function InventoryPage() {
                   value={adminHero?.right?.link || ''} 
                   onChange={(e) => setAdminHero({ ...adminHero, right: { ...adminHero.right, link: e.target.value } })}
                   style={{ width: '100%', padding: '0.5rem', border: '1px solid #e2e8f0', borderRadius: '4px' }} 
-                  placeholder="e.g. Man"
+                  placeholder="e.g. Boys"
                 />
               </div>
             </div>

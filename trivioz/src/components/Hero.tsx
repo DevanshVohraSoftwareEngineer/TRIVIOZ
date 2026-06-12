@@ -6,8 +6,8 @@ export default function Hero() {
   const { t, adminHero } = useStore();
 
   // Fallbacks if not set
-  const left = adminHero?.left || { text: 'Woman', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', link: 'Woman' };
-  const right = adminHero?.right || { text: 'Man', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop', link: 'Man' };
+  const left = adminHero?.left || { text: 'Girls', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop', link: 'Girls' };
+  const right = adminHero?.right || { text: 'Boys', image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1000&auto=format&fit=crop', link: 'Boys' };
 
   return (
     <div style={{ height: '100vh', width: '100vw', position: 'relative', display: 'flex', overflow: 'hidden' }}>

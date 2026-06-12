@@ -110,14 +110,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [adminCoupons, setAdminCoupons] = useState<any[]>([]);
   const [adminRoles, setAdminRoles] = useState<any[]>([]);
   const [logisticsMetrics, setLogisticsMetrics] = useState<any>({ activeShipments: 0, avgSla: 0, rtoRate: 0 });
-  const [adminApiKey, setAdminApiKey] = useState<string>('sk_live_51M000000000000000000000000000');
+  const [adminApiKey, setAdminApiKey] = useState<string>('pk_test_placeholder');
   const [adminLiveEvents, setAdminLiveEvents] = useState<any[]>([]);
   const [adminWaves, setAdminWaves] = useState<any[]>([]);
   const [hypeAnalytics, setHypeAnalytics] = useState<{ signups: number; wishlisted: number }>({ signups: 0, wishlisted: 0 });
   const [adminTaxonomy, setAdminTaxonomy] = useState<any[]>([]);
   const [adminHero, setAdminHero] = useState<any>({
-    left: { text: 'Woman', image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop', link: 'Woman' },
-    right: { text: 'Man', image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop', link: 'Man' }
+    left: { text: 'Girls', image: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1000&auto=format&fit=crop', link: 'Girls' },
+    right: { text: 'Boys', image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1000&auto=format&fit=crop', link: 'Boys' }
   });
 
   // Load from LocalStorage on mount
@@ -216,50 +216,50 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         setHypeAnalytics(JSON.parse(storedHype));
       }
 
-      const storedTaxonomy = localStorage.getItem('trivioz_taxonomy');
+      const storedTaxonomy = localStorage.getItem('trivioz_taxonomy_v4');
       if (storedTaxonomy) {
         setAdminTaxonomy(JSON.parse(storedTaxonomy));
       } else {
         setAdminTaxonomy([
-          { id: 't1', department: 'Woman', group: 'Featured', name: 'New', isBold: true },
-          { id: 't2', department: 'Woman', group: 'Featured', name: 'Edited by Lennon Sorrenti', isBold: true },
-          { id: 't3', department: 'Woman', group: 'Featured', name: 'Festivals', isBold: true },
-          { id: 't4', department: 'Woman', group: 'Collection', name: 'Promotions', isSpecial: true },
-          { id: 't5', department: 'Woman', group: 'Collection', name: 'Mix & Match 10% off' },
-          { id: 't6', department: 'Woman', group: 'Collection', name: 'Swimwear' },
-          { id: 't7', department: 'Woman', group: 'Collection', name: 'Striped' },
-          { id: 't8', department: 'Woman', group: 'Collection', name: 'Jeans' },
-          { id: 't9', department: 'Woman', group: 'Collection', name: 'Trousers' },
-          { id: 't10', department: 'Woman', group: 'Collection', name: 'T-shirts' },
-          { id: 't11', department: 'Woman', group: 'Collection', name: 'Tops | Bodysuits' },
-          { id: 't12', department: 'Woman', group: 'Collection', name: 'Dresses' },
-          { id: 't13', department: 'Woman', group: 'Collection', name: 'Jackets | Trench Coats' },
-          { id: 't14', department: 'Woman', group: 'Collection', name: 'Blazers' },
-          { id: 't15', department: 'Woman', group: 'Collection', name: 'Shirts | Blouses' },
-          { id: 't16', department: 'Woman', group: 'Collection', name: 'Sweatshirts | Hoodies' },
-          { id: 't17', department: 'Woman', group: 'Collection', name: 'Shoes' },
-          { id: 't18', department: 'Woman', group: 'Collection', name: 'Bags | Backpacks' },
-          { id: 't19', department: 'Woman', group: 'Collection', name: 'Accessories' },
-          { id: 't20', department: 'Woman', group: 'Collection', name: 'Perfumes' },
-          { id: 't21', department: 'Woman', group: 'Collection', name: 'Knitwear | Crochet' },
-          { id: 't22', department: 'Woman', group: 'Collection', name: 'Skirts' },
-          { id: 't23', department: 'Woman', group: 'Collection', name: 'Shorts | Bermuda shorts' },
-          { id: 't24', department: 'Woman', group: 'Be Inspired', name: 'Parties and events' },
-          { id: 't25', department: 'Woman', group: 'Be Inspired', name: 'Holiday' },
-          { id: 't26', department: 'Woman', group: 'Be Inspired', name: 'Collaborations' },
-          { id: 't27', department: 'Woman', group: 'Be Inspired', name: 'Special Collection' },
-          { id: 't28', department: 'Woman', group: 'Be Inspired Sub', name: 'Pacific Republic' },
-          { id: 't29', department: 'Woman', group: 'Be Inspired Sub', name: 'STWD' },
-          // Add basic ones for Man
-          { id: 'm1', department: 'Man', group: 'Featured', name: 'New In', isBold: true },
-          { id: 'm2', department: 'Man', group: 'Collection', name: 'T-Shirts' },
-          { id: 'm3', department: 'Man', group: 'Collection', name: 'Jeans' },
-          { id: 'm4', department: 'Man', group: 'Collection', name: 'Hoodies' },
-          { id: 'm5', department: 'Man', group: 'Be Inspired', name: 'Streetwear' },
+          { id: 't1', department: 'Girls', group: 'Featured', name: 'New', isBold: true },
+          { id: 't2', department: 'Girls', group: 'Featured', name: 'Edited by Lennon Sorrenti', isBold: true },
+          { id: 't3', department: 'Girls', group: 'Featured', name: 'Festivals', isBold: true },
+          { id: 't4', department: 'Girls', group: 'Collection', name: 'Promotions', isSpecial: true },
+          { id: 't5', department: 'Girls', group: 'Collection', name: 'Mix & Match 10% off' },
+          { id: 't6', department: 'Girls', group: 'Collection', name: 'Swimwear' },
+          { id: 't7', department: 'Girls', group: 'Collection', name: 'Striped' },
+          { id: 't8', department: 'Girls', group: 'Collection', name: 'Jeans' },
+          { id: 't9', department: 'Girls', group: 'Collection', name: 'Trousers' },
+          { id: 't10', department: 'Girls', group: 'Collection', name: 'T-shirts' },
+          { id: 't11', department: 'Girls', group: 'Collection', name: 'Tops | Bodysuits' },
+          { id: 't12', department: 'Girls', group: 'Collection', name: 'Dresses' },
+          { id: 't13', department: 'Girls', group: 'Collection', name: 'Jackets | Trench Coats' },
+          { id: 't14', department: 'Girls', group: 'Collection', name: 'Blazers' },
+          { id: 't15', department: 'Girls', group: 'Collection', name: 'Shirts | Blouses' },
+          { id: 't16', department: 'Girls', group: 'Collection', name: 'Sweatshirts | Hoodies' },
+          { id: 't17', department: 'Girls', group: 'Collection', name: 'Shoes' },
+          { id: 't18', department: 'Girls', group: 'Collection', name: 'Bags | Backpacks' },
+          { id: 't19', department: 'Girls', group: 'Collection', name: 'Accessories' },
+          { id: 't20', department: 'Girls', group: 'Collection', name: 'Perfumes' },
+          { id: 't21', department: 'Girls', group: 'Collection', name: 'Knitwear | Crochet' },
+          { id: 't22', department: 'Girls', group: 'Collection', name: 'Skirts' },
+          { id: 't23', department: 'Girls', group: 'Collection', name: 'Shorts | Bermuda shorts' },
+          { id: 't24', department: 'Girls', group: 'Be Inspired', name: 'Parties and events' },
+          { id: 't25', department: 'Girls', group: 'Be Inspired', name: 'Holiday' },
+          { id: 't26', department: 'Girls', group: 'Be Inspired', name: 'Collaborations' },
+          { id: 't27', department: 'Girls', group: 'Be Inspired', name: 'Special Collection' },
+          { id: 't28', department: 'Girls', group: 'Be Inspired Sub', name: 'Pacific Republic' },
+          { id: 't29', department: 'Girls', group: 'Be Inspired Sub', name: 'STWD' },
+          // Add basic ones for Boys
+          { id: 'm1', department: 'Boys', group: 'Featured', name: 'New In', isBold: true },
+          { id: 'm2', department: 'Boys', group: 'Collection', name: 'T-Shirts' },
+          { id: 'm3', department: 'Boys', group: 'Collection', name: 'Jeans' },
+          { id: 'm4', department: 'Boys', group: 'Collection', name: 'Hoodies' },
+          { id: 'm5', department: 'Boys', group: 'Be Inspired', name: 'Streetwear' },
         ]);
       }
 
-      const storedHero = localStorage.getItem('trivioz_hero');
+      const storedHero = localStorage.getItem('trivioz_hero_v4');
       if (storedHero) {
         setAdminHero(JSON.parse(storedHero));
       }
@@ -292,8 +292,8 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('trivioz_live_events', JSON.stringify(adminLiveEvents));
     localStorage.setItem('trivioz_waves', JSON.stringify(adminWaves));
     localStorage.setItem('trivioz_hype_analytics', JSON.stringify(hypeAnalytics));
-    localStorage.setItem('trivioz_taxonomy', JSON.stringify(adminTaxonomy));
-    localStorage.setItem('trivioz_hero', JSON.stringify(adminHero));
+    localStorage.setItem('trivioz_taxonomy_v4', JSON.stringify(adminTaxonomy));
+    localStorage.setItem('trivioz_hero_v4', JSON.stringify(adminHero));
     localStorage.setItem('trivioz_wishlist', JSON.stringify(wishlist));
   }, [
     products, adminOrders, adminCustomers, adminCampaigns, adminPromotions, 
